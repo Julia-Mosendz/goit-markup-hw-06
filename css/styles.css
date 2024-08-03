@@ -37,6 +37,7 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
+  padding: 17px 0;
 }
 
 .page-header {
@@ -46,9 +47,20 @@ img {
 }
 
 .container {
-  max-width: 1158px;
+  max-width: 320px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+   .container{
+    max-width: 768px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+   .container{
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 
 .header-container {
@@ -107,7 +119,7 @@ img {
 
 .contacts {
   font-style: normal;
-  margin-left: auto;
+ display: none;
 }
 
 .contacts-link {
@@ -127,15 +139,23 @@ img {
 }
 
 .nav-list {
-  display: flex;
-  gap: 40px;
+ display: none;
 }
 
 .contacts-list {
   display: flex;
   gap: 40px;
 }
-
+@media only screen and (min-width: 768px) {
+   .nav-list{
+    display: flex;
+    gap: 40px;
+    
+  }
+  .contacts{
+    display: block;
+  }
+}
 .section-one {
   background-color: #2e2f42;
   padding: 188px 0;
