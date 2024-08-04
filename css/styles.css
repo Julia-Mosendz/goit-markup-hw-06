@@ -491,8 +491,8 @@ img {
   }
 }
 .section-four {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .section-four-header {
@@ -514,13 +514,12 @@ img {
 
 .section-four-list {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 48px;
+ flex-direction: column;
+ gap: 48px;
 }
 
 .section-four-firstli {
-  width: calc((100% - 48px) / 3);
+
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-four-firstli:hover {
@@ -558,6 +557,30 @@ img {
   border: 1px solid #e7e9fc;
   border-top: none;
 }
+
+@media only screen and (min-width: 768px) {
+   .section-four-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+    .section-four-firstli {
+      width: calc((100% - 24px)/2);
+    }
+}
+@media only screen and (min-width: 1158px) {
+   .section-four{
+    padding: 120px 0;
+
+  }
+  .section-four-list{
+    gap: 48px 24px;
+  }
+     .section-four-firstli {
+       width: calc((100% - 48px)/3);
+     }
+}
+
 .page-footer {
   background-color: #2e2f42;
   padding: 96px 0;
@@ -949,18 +972,73 @@ left: 0;
 height: 100%;
 width: 100%;
 background-color: #fff;
+display: flex;
+flex-direction: column;
+padding: 72px 16px 40px 16px;
+opacity: 0;
+visibility: hidden;
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-.mobile-close-btn {}
+.mobile-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  padding: 0;
+  line-height: 0;
+  border-radius: 50%;
+  width: 24px;
+    height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
 
-.mob-nav-list {}
+.mob-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: auto;
+}
 
-.mob-nav-link {}
+.mob-nav-link {
+  font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11111;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+.mob-nav-link.active{
+  color: #404bbf;
+}
+.mob-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
 
-.mob-contact-list {}
+.mob-contact-link {
+  font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+.mob-contact-link.active{
+  color: #4d5ae5;
+}
+.mob-soc-list {
+  display: flex;
+  gap: 40px;
+}
 
-.mob-contact-link {}
 
-.mob-soc-list {}
-
-
+@media only screen and (min-width: 768px) {
+   .mobile-menu{
+    display: none;
+  }
+}
