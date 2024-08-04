@@ -52,12 +52,12 @@ img {
   padding: 0 16px;
 }
 @media only screen and (min-width: 768px) {
-   .container{
+  .container {
     max-width: 768px;
   }
 }
 @media only screen and (min-width: 1158px) {
-   .container{
+  .container {
     max-width: 1158px;
     padding: 0 15px;
   }
@@ -66,15 +66,7 @@ img {
 .header-container {
   display: flex;
   align-items: center;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-}
-
-.header-logo {
-  margin-right: 76px;
+  justify-content: space-between;
 }
 
 .header-logo .logo-part {
@@ -119,12 +111,12 @@ img {
 
 .contacts {
   font-style: normal;
- display: none;
+  display: none;
 }
 
 .contacts-link {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: #434455;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,48 +131,90 @@ img {
 }
 
 .nav-list {
- display: none;
+  display: none;
 }
 
-.contacts-list {
-  display: flex;
-  gap: 40px;
+.mobile-open-btn {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
 }
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+.mobile-open-icon {
+}
+
 @media only screen and (min-width: 768px) {
-   .nav-list{
+  .mobile-open-btn {
+    display: none;
+  }
+
+  .header-logo {
+    margin-right: 120px;
+  }
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-list {
     display: flex;
     gap: 40px;
-    
   }
-  .contacts{
+  .contacts {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .header-logo {
+    margin-right: 76px;
+  }
+  .contacts-list {
+  flex-direction: row;
+  gap: 40px;}
+  .contacts-link {
+  font-size: 16px;
+    line-height: 1.5;
   }
 }
 .section-one {
   background-color: #2e2f42;
-  padding: 188px 0;
+  padding: 72px 0;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/hero-mob-1x.jpg);
   max-width: 1440px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 1440px;
-  margin: auto;
+  margin:0 auto;
+}
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .section-one {
+    background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/hero-mob-2x.jpg);
+  }
 }
 
 .main-header {
-  max-width: 496px;
-  font-size: 56px;
-  line-height: 1.07;
+  max-width: 216px;
+  font-size: 36px;
+  line-height: 1.11;
   text-align: center;
   letter-spacing: 0.02em;
   color: #ffffff;
   margin: 0 auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
 .button {
@@ -208,14 +242,56 @@ img {
   background-color: #404bbf;
 }
 
+@media only screen and (min-width: 768px) {
+   .section-one{padding: 112px 0;
+    background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url(../images/hero-tab-1x.jpg);
+    
+  }
+    @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+      .section-one {
+        background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+          url(../images/hero-tab-2x.jpg);
+      }
+    }
+    .main-header {
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
+    margin-bottom: 36px;
+    }
+}
+@media only screen and (min-width: 1158px) {
+    .section-one {
+        padding: 188px 0;
+        background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+          url(../images/people-office.jpg);
+    
+      }
+    
+      @media screen and (min-device-pixel-ratio: 2) and (min-width: 1158px),
+      screen and (min-resolution: 192dpi) and (min-width: 1158px),
+      screen and (min-resolution: 2dppx) and (min-width: 1158px) {
+        .section-one {
+          background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero-desk-2x.jpg);
+        }
+      }
+    
+      .main-header {
+        margin-bottom: 48px;
+      }
+}
 .section-two {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .section-two-header {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
@@ -235,15 +311,14 @@ img {
 
 .section-two-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
 }
 
-.section-two-firstli {
-  width: calc((100% - 72px) / 4);
-}
+
 
 .antenna {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   height: 112px;
@@ -260,8 +335,28 @@ img {
 .section-two-paragraph {
   line-height: 1.5;
   letter-spacing: 0.02em;
+  font-weight: 500;
+}
+@media only screen and (min-width: 768px) {
+.section-two-list{
+flex-direction: row;
+flex-wrap: wrap;
+gap: 72px 24px;
+}
+   .section-two-firstli{
+   width: calc((100% - 24px)/2);
+    
+  }
+    .section-two-header{
+    text-align: left;
+    }
 }
 
+@media only screen and (min-width: 1158px) {
+   .section-two{
+    
+  }
+}
 .section-three {
   background-color: #f4f4fd;
   padding: 120px 0;
@@ -525,9 +620,9 @@ img {
   color: #ffffff;
 }
 .footer-form-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 4px;
   min-width: 165px;
   height: 40px;
@@ -539,12 +634,12 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #fff;
-font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .fotter-form-icon {
-    fill: #fff;
-    margin-left: 16px;
+  fill: #fff;
+  margin-left: 16px;
 }
 
 .backdrop {
@@ -691,11 +786,11 @@ font-family: "Roboto", sans-serif;
   padding: 8px 16px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: transparent;
-font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    color: rgba(46, 47, 66, 0.4);
-    background-color: transparent;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
 }
 
 .modal-textarea:focus {
